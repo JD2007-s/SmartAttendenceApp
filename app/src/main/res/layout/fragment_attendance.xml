@@ -2,16 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="12dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAttendance"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" />
 
     <Button
-        android:id="@+id/btnTakePhoto"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnViewAbsentees"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Take Attendance Photo"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white" />
-
+        android:text="View Absentees"
+        android:layout_marginTop="8dp"/>
 </LinearLayout>

@@ -3,23 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="12dp">
 
-    <ListView
-        android:id="@+id/absenteesListView"
+    <TextView
+        android:id="@+id/tvAbsenteesTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Absentees List"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAbsentees"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="1dp" />
+        android:scrollbars="vertical"/>
 
     <Button
-        android:id="@+id/sendMessagesBtn"
+        android:id="@+id/btnNotifyParents"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send WhatsApp Messages"
-        android:background="@color/purple_500"
-        android:textColor="@android:color/white"
-        android:padding="12dp"
-        android:layout_marginTop="8dp" />
+        android:text="Notify Parents on WhatsApp"
+        android:layout_marginTop="8dp"/>
 </LinearLayout>

@@ -1,6 +1,5 @@
 package com.jaynesh.smartattendenceapp;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -14,7 +13,7 @@ public interface StudentDao {
     void insert(Student student);
 
     @Query("SELECT * FROM students")
-    LiveData<List<Student>> getAllStudents();   // 👈 LiveData for observe()
+    List<Student> getAllStudents();
 
     @Query("DELETE FROM students")
     void clearAll();

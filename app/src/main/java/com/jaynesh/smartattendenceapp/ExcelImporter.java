@@ -1,44 +1,46 @@
 package com.jaynesh.smartattendenceapp;
 
-import org.apache.poi.ss.usermodel.*;
+import android.content.Context;
+import android.util.Log;
+
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class ExcelImporter {
 
-    public static List<Student> importStudentsFromExcel(File file) {
+    // ✅ Import Excel from assets folder
+    public static List<Student> importFromAssets(Context context, String fileName) {
         List<Student> students = new ArrayList<>();
+
         try {
-            FileInputStream fis = new FileInputStream(file);
-            Workbook workbook = new XSSFWorkbook(fis);
-            Sheet sheet = workbook.getSheetAt(0);
+            InputStream inputStream = context.getAssets().open(fileName);
+            XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
+            XSSFSheet sheet = workbook.getSheetAt(0);
 
-            Iterator<Row> rowIterator = sheet.iterator();
-            rowIterator.next(); // skip header row
+            for (Row row : sheet) {
+                if (row.getRowNum() == 0) continue; // skip header
 
-            while (rowIterator.hasNext()) {
-                Row row = rowIterator.next();
                 String name = row.getCell(0).getStringCellValue();
-                String rollNo = row.getCell(1).getStringCellValue();
+                String enrollment = row.getCell(1).getStringCellValue();
+                String phone = row.getCell(2).getStringCellValue();
+                String className = row.getCell(3).getStringCellValue();
 
-                Student student = new Student();
-                student.setName(name);
-                student.setRollNo(rollNo);
-
-                students.add(student);
+                students.add(new Student(name, enrollment, phone, className));
             }
 
             workbook.close();
-            fis.close();
+            inputStream.close();
 
         } catch (Exception e) {
+            Log.e("ExcelImporter", "Error reading Excel: " + e.getMessage());
             e.printStackTrace();
         }
+
         return students;
     }
 }

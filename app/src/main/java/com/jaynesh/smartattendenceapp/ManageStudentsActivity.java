@@ -66,7 +66,7 @@ public class ManageStudentsActivity extends AppCompatActivity {
                     continue;
                 }
 
-                dbHelper.insertStudent(enrollment, name, phone);
+                dbHelper.insertStudent(enrollment, name, phone,1);
                 importedCount++;
             }
 

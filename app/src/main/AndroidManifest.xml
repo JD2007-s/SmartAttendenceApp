@@ -52,5 +52,7 @@
         <activity android:name=".HistoryActivity" />
         <activity android:name=".BackupActivity" />
 
+
+
     </application>
 </manifest>

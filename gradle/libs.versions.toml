@@ -12,6 +12,9 @@ appcompatVersion = "1.7.1"
 materialVersion = "1.13.0"
 poiOoxml = "5.2.5"
 roomRuntimeAndroid = "2.7.2"
+visionCommon = "17.3.0"
+playServicesMlkitTextRecognitionCommon = "19.1.0"
+playServicesMlkitTextRecognition = "19.0.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -27,6 +30,9 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 google-material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
 poi-ooxml = { group = "org.apache.poi", name = "poi-ooxml", version.ref = "poiOoxml" }
 androidx-room-runtime-android = { group = "androidx.room", name = "room-runtime-android", version.ref = "roomRuntimeAndroid" }
+vision-common = { group = "com.google.mlkit", name = "vision-common", version.ref = "visionCommon" }
+play-services-mlkit-text-recognition-common = { group = "com.google.android.gms", name = "play-services-mlkit-text-recognition-common", version.ref = "playServicesMlkitTextRecognitionCommon" }
+play-services-mlkit-text-recognition = { group = "com.google.android.gms", name = "play-services-mlkit-text-recognition", version.ref = "playServicesMlkitTextRecognition" }
 
 
 

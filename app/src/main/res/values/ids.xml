@@ -2,4 +2,5 @@
 <resources>
     <item name="fab_add_student" type="id" />
     <item name="listViewAbsentees" type="id" />
+    <item name="recyclerViewAttendance" type="id" />
 </resources>

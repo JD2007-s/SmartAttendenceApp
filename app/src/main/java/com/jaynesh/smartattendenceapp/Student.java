@@ -1,26 +1,36 @@
 package com.jaynesh.smartattendenceapp;
 
-import java.io.Serializable;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-public class Student implements Serializable {
-    private String id;
+@Entity(tableName = "students")
+public class Student {
+
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
     private String name;
-    private String className;
-    private String teacherName;
-    private String phone;
+    private String enrollment;
+    private String parentPhone;
+    private String studentClass;
+    private boolean isPresent = false; // default absent
 
-    public Student(String id, String name, String className, String teacherName, String phone) {
-        this.id = id;
+    public Student(String name, String enrollment, String parentPhone, String studentClass) {
         this.name = name;
-        this.className = className;
-        this.teacherName = teacherName;
-        this.phone = phone;
+        this.enrollment = enrollment;
+        this.parentPhone = parentPhone;
+        this.studentClass = studentClass;
     }
 
-    // Getters
-    public String getId() { return id; }
+    // Getters and setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
     public String getName() { return name; }
-    public String getClassName() { return className; }
-    public String getTeacherName() { return teacherName; }
-    public String getPhone() { return phone; }
+    public String getEnrollment() { return enrollment; }
+    public String getParentPhone() { return parentPhone; }
+    public String getStudentClass() { return studentClass; }
+
+    public boolean isPresent() { return isPresent; }
+    public void setPresent(boolean present) { isPresent = present; }
 }
