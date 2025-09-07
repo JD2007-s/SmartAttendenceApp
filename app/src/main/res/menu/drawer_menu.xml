@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_classes"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Classes" />
+
+    <item
+        android:id="@+id/nav_students"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Students" />
+
+    <item
+        android:id="@+id/nav_attendance"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Attendance" />
+
+    <item
+        android:id="@+id/nav_history"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        android:title="History" />
+
+    <item
+        android:id="@+id/nav_reports"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="Reports" />
+</menu>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- You can use a specific color or a theme attribute -->
+    <!-- Using a theme attribute is better for dynamic theming -->
+    <solid android:color="?attr/colorAccent" />
+    <!-- Example with a hardcoded color (replace with your preference):
+    <solid android:color="#FF03DAC5" />
+    -->
+
+    <!-- Optional: Add a stroke (border) -->
+    <!--
+    <stroke
+        android:width="2dp"
+        android:color="?attr/colorPrimaryVariant" />
+    -->
+</shape>
